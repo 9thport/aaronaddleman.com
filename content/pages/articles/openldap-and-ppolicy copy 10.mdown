@@ -1,6 +1,6 @@
 Date: 02 July 2012
 Categories: projects/openldap
-Flags: draft
+Flags: 
 Summary: this is the summary
 Read more: Find out about this superb vegetable
 
