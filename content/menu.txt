@@ -2,4 +2,3 @@ resume
 about
 projects
 articles
-blog
