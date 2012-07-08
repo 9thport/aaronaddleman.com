@@ -1,0 +1,398 @@
+$dark-grey: #999
+$light-grey: #CCC
+$font-size: 14px
+$small-font-size: 12px
+$tiny-font-size: 11px
+$meta-font-family: Courier
+
+.container
+  width: 720px
+  font-size: $font-size
+
+.header
+
+  h1
+    font-size: 22px
+    /* border-bottom: 2px solid #EEE */
+    padding: 10px 0 5px 0
+    margin: 30px 0 30px 0
+    color: #111
+
+  .nav
+    margin-top: -60px
+    float: right
+
+    a
+      color: #A00
+
+.home .nav
+  display: none
+
+ol.index
+  list-style-type: none
+  margin: 25px 0 25px 1px
+
+  li
+    line-height: 22px
+
+
+  .header, .arrow
+    color: $dark-grey
+    font-family: $meta-font-family
+    font-size: $small-font-size
+    vertical-align: top
+
+  .header
+    float: left
+    min-width: 115px
+
+  .arrow
+    margin: 0 5px
+
+  .main
+    font-size: $font-size
+    color: $light-grey
+    margin: 0 0 0 10px
+    display: inline-block
+    max-width: 55%
+    line-height: 1.3em
+
+  .meta
+    float: right
+    color: $light-grey
+    font-size: $small-font-size
+    vertical-align: top
+
+    a
+      color: $light-grey
+      font-size: $tiny-font-size
+
+.article
+  
+  h2
+    font-size: 19px
+    color: #333
+  
+  h3
+    font-size: 16px
+    color: #555
+    padding-bottom: 4px
+  
+  h4
+    font-size: 15px
+    color: #444
+
+  p
+    font-size: $font-size
+    line-height: 1.5em
+    letter-spacing: 1px
+    margin-bottom: 20px
+
+  code
+    color: #666
+
+  img
+    padding: 10px
+    border: 1px solid #DDD
+
+  .date
+    color: $light-grey
+    margin: -5px 0 15px
+    font-family: $meta-font-family
+
+  .sidebar-nav
+
+    margin: -120px 0px 0px -330px
+    float: left
+    text-align: right
+    width: 275px
+    font-size: 12px
+    position: fixed
+
+    h1
+      font-size: $font-size
+      color: $light-grey
+      font-weight: normal
+      margin-bottom: 5px
+
+    li
+      list-style: none
+
+    a
+      color: $light-grey
+
+    a:hover
+      color: $dark-grey
+
+  .toc
+
+    margin: -40px 0px 0px -330px
+    float: left
+    text-align: right
+    width: 275px
+    font-size: 12px
+    position: fixed
+
+    h1
+      font-size: $font-size
+      color: $light-grey
+      font-weight: normal
+      margin-bottom: 5px
+
+    li
+      list-style: none
+
+    a
+      color: $light-grey
+
+    a:hover
+      color: $dark-grey
+
+  .note
+    background: #F0F5F9
+    border: 1px solid #D0DBE6
+    -moz-border-radius: 3px
+    -webkit-border-radius: 3px
+    border-radius: 3px
+    color: #777
+    margin: 30px 15px
+    padding: 10px 20px 10px 20px
+    letter-spacing: normal
+    line-height: 1.5em
+
+    a
+      color: #08A
+
+  .author
+    color: $light-grey
+    margin: 20px 0 30px
+    float: right
+    font-family: $meta-font-family
+
+    img
+      vertical-align: middle
+      border: 0px
+      padding: 0px
+
+    a
+      color: $light-grey
+
+      img
+        opacity: 0.4
+
+    a:hover
+      text-decoration: none
+      color: $dark-grey
+
+      img
+        opacity: 0.75
+
+  .file
+    color: #BBB
+    /* border-bottom: 1px dotted #EEE */
+    margin-bottom: -22px
+    text-align: right
+    margin-right: 8px
+    font-weight: normal
+
+  .comments
+    margin: 60px 0 20px 0
+
+    #disqus_thread
+      #dsq-like-tooltip, #dsq-sort-by, #dsq-pagination, h3
+        display: none
+
+    #dsq-content
+      .dsq-avatar img
+        width: 24px
+        height: 24px
+
+  .highlight
+    padding: 10px 10px 10px 15px
+    -webkit-border-radius: 3px
+    -moz-border-radius: 3px
+    border-radius: 3px
+    margin-bottom: 30px
+
+    pre
+      background: inherit
+      border: 0px
+      margin: 0px
+      padding: 0px
+
+footer
+  border-top: 2px solid #EEE
+  padding: 10px 0 5px 0
+  margin: 40px 0 60px 0
+  font-size: $tiny-font-size
+
+  li
+    line-height: 20px
+
+  img
+    opacity: 0.8
+
+  img:hover
+    opacity: 1
+
+.left
+  float: left
+
+.right
+  float: right
+
+.clear
+  clear: both
+
+.highlight
+  .hll
+    background-color: #ffffcc
+  .c
+    color: #999988
+    font-style: italic
+  .err
+    color: #a61717
+    background-color: #e3d2d2
+  .k, .o
+    font-weight: bold
+  .cm
+    color: #999988
+    font-style: italic
+  .cp
+    color: #999999
+    font-weight: bold
+  .c1
+    color: #999988
+    font-style: italic
+  .cs
+    color: #999999
+    font-weight: bold
+    font-style: italic
+  .gd
+    color: #000000
+    background-color: #ffdddd
+  .ge
+    font-style: italic
+  .gr
+    color: #aa0000
+  .gh
+    color: #999999
+  .gi
+    color: #000000
+    background-color: #ddffdd
+  .go
+    color: #888888
+  .gp
+    color: #555555
+  .gs
+    font-weight: bold
+  .gu
+    color: #aaaaaa
+  .gt
+    color: #aa0000
+  .kc, .kd, .kn, .kp, .kr
+    font-weight: bold
+  .kt
+    color: #445588
+    font-weight: bold
+  .m
+    color: #009999
+  .s
+    color: #bb8844
+  .na
+    color: #008080
+  .nb
+    color: #999999
+  .nc
+    color: #445588
+    font-weight: bold
+  .no
+    color: #008080
+  .ni
+    color: #800080
+  .ne, .nf
+    color: #990000
+    font-weight: bold
+  .nn
+    color: #555555
+  .nt
+    color: #000080
+  .nv
+    color: #008080
+  .ow
+    font-weight: bold
+  .w
+    color: #bbbbbb
+  .mf, .mh, .mi, .mo
+    color: #009999
+  .sb, .sc, .sd, .s2, .se, .sh, .si, .sx
+    color: #bb8844
+  .sr
+    color: #808000
+  .s1, .ss
+    color: #bb8844
+  .bp
+    color: #999999
+  .vc, .vg, .vi
+    color: #008080
+  .il
+    color: #009999
+
+/* Comment
+/* Error
+/* Keyword
+/* Operator
+/* Comment.Multiline
+/* Comment.Preproc
+/* Comment.Single
+/* Comment.Special
+/* Generic.Deleted
+/* Generic.Emph
+/* Generic.Error
+/* Generic.Heading
+/* Generic.Inserted
+/* Generic.Output
+/* Generic.Prompt
+/* Generic.Strong
+/* Generic.Subheading
+/* Generic.Traceback
+/* Keyword.Constant
+/* Keyword.Declaration
+/* Keyword.Namespace
+/* Keyword.Pseudo
+/* Keyword.Reserved
+/* Keyword.Type
+/* Literal.Number
+/* Literal.String
+/* Name.Attribute
+/* Name.Builtin
+/* Name.Class
+/* Name.Constant
+/* Name.Entity
+/* Name.Exception
+/* Name.Function
+/* Name.Namespace
+/* Name.Tag
+/* Name.Variable
+/* Operator.Word
+/* Text.Whitespace
+/* Literal.Number.Float
+/* Literal.Number.Hex
+/* Literal.Number.Integer
+/* Literal.Number.Oct
+/* Literal.String.Backtick
+/* Literal.String.Char
+/* Literal.String.Doc
+/* Literal.String.Double
+/* Literal.String.Escape
+/* Literal.String.Heredoc
+/* Literal.String.Interpol
+/* Literal.String.Other
+/* Literal.String.Regex
+/* Literal.String.Single
+/* Literal.String.Symbol
+/* Name.Builtin.Pseudo
+/* Name.Variable.Class
+/* Name.Variable.Global
+/* Name.Variable.Instance
+/* Literal.Number.Integer.Long

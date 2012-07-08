@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+%html(lang="en")
+  %head
+    %meta(charset="utf-8")
+    - if @description
+      %meta(name="description" content=@description)
+    %title= @title
+    %link(href="/pro_v1/css/bootstrap.min.css" media="screen" rel="stylesheet")
+    %link(href="/pro_v1/css/pygments.css" media="screen" rel="stylesheet")
+    %link(href="/css/master.css" media="screen" rel="stylesheet" type="text/css")
+    %link(href="/articles.xml" rel="alternate" type="application/atom+xml")
+
+  %body(class="#{@page ? @page.template : 'page'}")
+    .container
+      .header
+        = haml :header, :layout => false
+        / %h1= @title
+        / .menu
+        /  - display_menu(@menu_items, :class => "nav")
+        /  = haml :sidebar, :layout => false
+        /  %a(href="/") home
+      .content
+        = yield
+      %footer
+        = haml :footer, :layout => false
+
+    .analytics= haml :analytics, :layout => false

@@ -1,0 +1,69 @@
+/ %nav.breadcrumb
+/   - display_breadcrumbs
+
+.article
+
+  .date= format_date(@page.date) if @page.date
+  .clear
+  = haml :sidebar, :layout => false
+  .toc= toc(@page)
+  
+  .body
+    %articles
+      ~ @page.to_html(self)
+      
+      - unless @page.pages.empty?
+        - @page.pages.each do |page|
+          %article
+            %div
+              %h2
+                %a(href="#{url(page.abspath)}")= page.heading
+              - if page.summary.nil? || page.summary.empty?
+                ~ page.body(self)
+              - else
+                ~ page.summary
+                %p.read_more
+                  %a(href="#{url(page.abspath)}")= page.read_more
+              = haml :page_meta, :layout => false, :locals => { :page => page }
+      
+      
+      - unless @page.articles.empty?
+        - posts = @page.articles.paginate(:page => params[:page] ? params[:page] : 1, :per_page => 6)
+        - posts.each do |post|
+          %article
+            %div
+              %h2
+                %a(href="#{post.abspath}")= post.heading
+              = post.summary
+              %a(href="#{post.permalink}")= post.read_more
+        = will_paginate posts
+    
+
+/ #content
+/   %article(role="main")
+/     ~ @page.to_html(self)
+/ 
+/     %section.pages
+/       = article_summaries(@page.pages)
+/ 
+/     - unless @page.articles.empty?
+/       %section.articles
+/       - posts = @page.articles.paginate(:page => params[:page] ? params[:page] : 1, :per_page => 6)
+/       - posts.each do |post|
+/         %article
+/           %div
+/             %h3
+/               %a(href="#{post.abspath}")= post.heading
+/               = post.body
+/               %a(href="#{post.permalink}")= post.read_more
+/       = will_paginate posts
+/       / %section.articles
+/       /   %header
+/       /     %h1= articles_heading
+/       /   = article_summaries(@page.articles)
+/ 
+/ /     = haml :page_meta, :layout => false, :locals => { :page => @page }
+/ / 
+/ /   = haml :comments, :layout => false
+/ / 
+/ / = haml :sidebar, :layout => false

@@ -1,0 +1,13 @@
+%h1 Articles
+
+/ %section.articles= article_summaries(latest_articles)
+
+- posts = latest_articles.paginate(:page => params[:page] ? params[:page] : 1, :per_page => 6)
+- posts.each do |post|
+  %article
+    %div
+      %h3
+        %a(href="#{post.permalink}")= post.heading
+        = post.summary
+        %a(href="#{post.permalink}")= post.read_more
+= will_paginate posts

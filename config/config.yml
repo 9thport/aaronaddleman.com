@@ -2,7 +2,7 @@
 # titles.
 #
 title: "Aaron Addleman"
-subtitle: "inquisitive programmer"
+subtitle: "system/network/security admin, programmer"
 
 # You should really specify your content's author when generating an
 # Atom feed. Specify at least one of name, uri or email, and Nesta will
@@ -12,14 +12,14 @@ subtitle: "inquisitive programmer"
 #
 author:
   name: Aaron Addleman
-  uri: http://yourhomepage.com
+  uri: http://www.aaronaddleman.com
   email: aaronaddleman@gmail.com
 
 # You can stick with the default look and feel, or use a theme. Themes are
 # easy to create or install, and live inside the themes directory. You
 # can also use scripts/theme to install them.
 #
-theme: pro_v0.1
+theme: pro_v1
 
 # If you want to use the Disqus service (http://disqus.com) to display
 # comments on your site, register a Disqus account and then specify your
@@ -52,7 +52,7 @@ content: content
 #     scroll down a bit to set it in production even if you're not deploying
 #     to your own server.
 #
-# google_analytics_code: "UA-???????-?"
+google_analytics_code: "UA-31631239-1"
 
 # Overriding "cache" and "content" in production is recommended if you're
 # deploying Nesta to your own server (but see the deployment documentation
@@ -61,7 +61,7 @@ content: content
 #
 # Don't forget to uncomment the "production:" line too...
 
-# production:
+production:
 #   cache: true    
 #   content: /var/apps/nesta/shared/content
-#   google_analytics_code: "UA-???????-?"
+  google_analytics_code: "UA-31631239-1"

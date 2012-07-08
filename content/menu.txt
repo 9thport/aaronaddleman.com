@@ -1,3 +1,5 @@
-projects
 resume
+about
+projects
+articles
 blog
