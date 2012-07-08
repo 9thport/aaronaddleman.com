@@ -1,12 +1,12 @@
 Date: 02 July 2012
-Categories: projects/openldap
-Flags: draft
+Categories: projects/ruby
+Flags: published
 Summary: this is the summary
 Read more: Find out about this superb vegetable
 
-# OpenLDAP and ppolicy
+# Using Ruby to import from HTML
 
-After installing OpenLDAP and having Apache2 authenticate to OpenLDAP, it was time to bring in password policy. First up is getting the slapd.conf file to be like the following:
+The beginning of importing HTML content into a MySQL database:
 
 <pre lang="ruby" class="highlight">
   #!/usr/bin/env ruby
@@ -60,11 +60,3 @@ After installing OpenLDAP and having Apache2 authenticate to OpenLDAP, it was ti
     end
   end
 </pre>
-
-## Something cool
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-## another thing thats cool
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
