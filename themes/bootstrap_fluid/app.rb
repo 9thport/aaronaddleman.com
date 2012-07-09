@@ -20,7 +20,7 @@ module Nesta
     #
     # Put your assets in themes/pro_v1/public/pro_v1.
     #
-    use Rack::Static, :urls => ["/pro_v1"], :root => "themes/pro_v1/public"
+    use Rack::Static, :urls => ["/bootstrap_fluid"], :root => "themes/bootstrap_fluid/public"
     
     helpers WillPaginate::Sinatra::Helpers
 

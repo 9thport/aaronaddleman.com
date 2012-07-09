@@ -1,8 +1,7 @@
 Date: 02 July 2012
 Categories: projects/ruby
 Flags: 
-Summary: this is the summary
-Read more: Find out about this superb vegetable
+Summary: Importing HTML content into a MySQL database with Ruby ActiveRecord
 
 # Using Ruby to import from HTML
 
