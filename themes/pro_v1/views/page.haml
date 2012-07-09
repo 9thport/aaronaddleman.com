@@ -33,7 +33,7 @@
           %article
             %div
               %h2
-                %a(href="#{post.abspath}")= post.heading
+                %a(href="#{"articles" + post.abspath}")= post.heading
               = post.summary
               %a(href="#{post.permalink}")= post.read_more
         = will_paginate posts
