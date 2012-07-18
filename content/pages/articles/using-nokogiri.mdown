@@ -1,0 +1,47 @@
+Date: 09 July, 2012
+Categories: projects/ruby
+Summary: I have always defaulted to hpricot for parsing HTML, but today decided to try out Nokogiri. Its really cool! Some of the features are easy to understand and write. I added some examples to help remember how to use them on this article.
+
+# Nokogiri
+
+## Sample Data
+
+    [employees.xml]
+    <employees>
+      <employee status="active">
+        <fullname>Dean Martin</fullname>
+      </employee>
+      <employee status="inactive">
+        <fullname>Jerry Lewis</fullname>
+      </employee>
+      <employee status="inactive">
+        <fullname>Ab Martin</fullname>
+      </employee>
+    </employees>
+    EOXML
+
+## Nokogiri example
+
+<pre lang="ruby" class="highlight">
+  require 'nokogiri'
+
+  f = File.open("employees.xml")
+  doc = Nokogiri::XML(f)
+  
+  
+  # navigate!
+  doc.employees.employee.last.fullname.content # => "Jerry Lewis"
+
+  # access node attributes!
+  doc.employees.employee.first["status"] # => "active"
+
+  # use some xpath!
+  doc.employees.employee("[@status='active']").fullname.content # => "Dean Martin"
+  doc.employees.employee(:xpath => "@status='active'").fullname.content # => "Dean Martin"
+
+  # use some css!
+  doc.employees.employee("[status='active']").fullname.content # => "Dean Martin"
+  doc.employees.employee(:css => "[status='active']").fullname.content # => "Dean Martin"
+  
+  f.close
+</pre>
