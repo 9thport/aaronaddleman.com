@@ -1,5 +1,6 @@
-%div.sidebar-nav
-  - display_menu(@menu_items, :class => "nav")
+.well.sidebar-nav
+  .toc= toc(@page)
+  / - display_menu(@menu_items, :class => "nav")
   / %ol
   /   %li
   /     %a(href="#")
@@ -10,3 +11,36 @@
 / #sidebar
 /   = haml :categories, :layout => false
 /   = haml :feed, :layout => false
+
+/ .well.sidebar-nav
+/   %ul.nav.nav-list
+/     %li.nav-header Sidebar
+/     %li.active
+/       %a{:href => "#"} Link
+/     %li
+/       %a{:href => "#"} Link
+/     %li
+/       %a{:href => "#"} Link
+/     %li
+/       %a{:href => "#"} Link
+/     %li.nav-header Sidebar
+/     %li
+/       %a{:href => "#"} Link
+/     %li
+/       %a{:href => "#"} Link
+/     %li
+/       %a{:href => "#"} Link
+/     %li
+/       %a{:href => "#"} Link
+/     %li
+/       %a{:href => "#"} Link
+/     %li
+/       %a{:href => "#"} Link
+/     %li.nav-header Sidebar
+/     %li
+/       %a{:href => "#"} Link
+/     %li
+/       %a{:href => "#"} Link
+/     %li
+/       %a{:href => "#"} Link
+/ / /.well

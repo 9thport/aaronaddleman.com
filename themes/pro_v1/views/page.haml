@@ -4,7 +4,7 @@
 .article
 
   .date= format_date(@page.date) if @page.date
-  .clear
+  / .clear
   = haml :sidebar, :layout => false
   .toc= toc(@page)
   
@@ -33,9 +33,9 @@
           %article
             %div
               %h2
-                %a(href="#{"articles" + post.abspath}")= post.heading
+                %a(href="#{url(post.path)}")= post.heading
               = post.summary
-              %a(href="#{post.permalink}")= post.read_more
+              %a(href="#{url(post.path)}")= post.read_more
         = will_paginate posts
     
 
