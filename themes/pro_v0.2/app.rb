@@ -4,6 +4,9 @@ require 'will_paginate'
 require 'will_paginate/array'
 require 'will_paginate/view_helpers/sinatra'
 
+# code coloring
+require "rack/pygments"
+
 module Nesta
   class App
     # Uncomment the Rack::Static line below if your theme has assets
