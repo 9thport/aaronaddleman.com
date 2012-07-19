@@ -1,6 +1,7 @@
 %nav.breadcrumb
   - display_breadcrumbs
 
+#toc= toc(@page)
 #content
   %article(role="main")
     ~ @page.to_html(self)
