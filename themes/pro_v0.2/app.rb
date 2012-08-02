@@ -33,7 +33,7 @@ module Nesta
       # Provide page TOC    
       def toc(page, toc_template = :table_of_contents)
         return nil unless can_generate_toc?
-        headings = Nokogiri::HTML(page.body(self)).css('h2')
+        headings = Nokogiri::HTML(page.body(self)).css('h2 h3')
         toc_headers = headings.inject({}) do |mappings, header_node|
           mappings[header_node.attr('id')] = header_node.content
           mappings
