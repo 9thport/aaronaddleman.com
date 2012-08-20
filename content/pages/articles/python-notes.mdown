@@ -7,14 +7,6 @@ Summary: While taking a class on python I made some notes that were helfup along
 
 ## Day 1: types, operators, flow control
 
-types
-	-tuple,int,str
-	-list,dict,set
-operators
-	-[], in
-flowcontrol
-	-if/elif/else
-	-for/while
 
 ## Day 2: functions/modules, def, scope, stdlib, exceptions
 
