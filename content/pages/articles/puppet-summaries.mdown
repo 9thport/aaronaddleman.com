@@ -25,4 +25,3 @@ file {'testfile':
 
 ## User resource
 
-example
