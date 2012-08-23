@@ -1,5 +1,5 @@
 Date: 26 July, 2012
-Categories: projects/puppet
+Categories: projects/puppet, projects/ruby
 Summary: What was that command again to test the module? A template to copy for adding a user goes like what again? Ugh, I need a cheatsheet to help me keep all of this recorded! So here you go, the cheatsheet
 
 # Puppet Cheatsheet

@@ -1,5 +1,5 @@
 Date: 20 Aug, 2012
-Categories: projects/ee
+Categories: projects/bash, projects/ee
 Summary: While working on a project related to Expression Engine, I created a small shell script to allow backing up of the various environments. This script is bare bones simple and just gets the job done. Nothing fancy here.
 
 # No frills shell script to backup multiple environments with a database dump
