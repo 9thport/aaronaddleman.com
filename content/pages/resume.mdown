@@ -1,12 +1,68 @@
 # Resume
-## Objective
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+# Summary
 
-## Experience
+I have been working with computers for over 15 years now and been self taught. Mostly engauged in UNIX or Linux systems and somewhat with MS Windows. My goals are to support a infrastructure with the knowledge and expertise that I have gained from being a systems administrator while improving security and methods of data storage or access.
+I really enjoy using Ruby on Rails to make strong web applications. Each time I learn something new in Rails, its great feeling where I want to do more!
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+# Specialties
 
-## Interests
+computer network managment, sun, cisco, windows, linux, freebsd, osx, veritas, legato, perl, python, c, ruby (ruby on rails)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+# Experience
+
+## Network Administrator at Federal Reserve Bank of San Francisco
+
+November 2003 - Present (8 years 11 months)
+network administrator responsible for computer services both on the external network and internal network. desktop support for web development team.
+4 recommendations available upon request
+
+## UNIX Administrator at Riverdeep
+
+August 2001 - November 2003 (2 years 4 months)
+Maintainance of UNIX servers and administration involving security, email, dns, web services, database administration.
+4 recommendations available upon request
+
+## Desktop Support at Mattel
+
+May 2000 - August 2001 (1 year 4 months)
+support of employee computers ranging from graphic artists, to ceo's.
+aided in transfering novell network system to windows platform.
+
+## QA at SSI
+
+July 1999 - April 2000 (10 months)
+1 recommendation available upon request
+Technical Support via Phone at Broderbund
+January 1998 - March 1998 (3 months)
+supported mostly Riven over the phone. Trained for supporting Printshop Pro
+
+## QA at Broderbund
+
+September 1997 - December 1997 (4 months) reported software errors to managment
+Courses
+Network Administrator
+Federal Reserve Bank of San Francisco Python Programming
+
+# Skills & Expertise
+
+Networking Programming Troubleshooting Windows
+Linux
+Mac OS X
+Perl
+Cisco Technologies FreeBSD
+Veritas
+Sun
+Python
+C
+EMC Storage Security
+
+# Education
+
+University of California, Berkeley
+Project Management, 2012 - 2012
+Sir Francis Drake Highschool
+
+# Interests
+
+new methods of implementing technology, gaming, snowboarding, anything japanese, movies, programming

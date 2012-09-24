@@ -1,0 +1,47 @@
+Date: 23 September, 2012
+Categories: categories/nesta
+Summary: Getting around an error message and turning on caching in Nesta 0.9.3
+
+# How to enable caching in Nestacms 0.9.3
+
+I wanted to turn on caching but got a bad error message. So after investigating around in the Nesta gem of files I made the following changes in the cache.rb file:
+
+## change #1
+
+old block
+
+    :::ruby
+    def cache_page_path(path,opts={})
+      # test if given a full path rather than relative path, otherwise join the public path to cache_dir 
+      # and ensure it is a full path
+      cache_dir = (settings.cache_dir == File.expand_path(settings.cache_dir)) ? 
+          settings.cache_dir : File.expand_path("#{settings.public}/#{settings.cache_dir}") # <--- old line
+      cache_dir = cache_dir[0..-2] if cache_dir[-1,1] == '/'
+      "#{cache_dir}/#{cache_file_name(path,opts)}"
+    end
+
+new block
+
+    :::ruby
+    def cache_page_path(path,opts={})
+      # test if given a full path rather than relative path, otherwise join the public path to cache_dir 
+      # and ensure it is a full path
+      cache_dir = (settings.cache_dir == File.expand_path(settings.cache_dir)) ? 
+          settings.cache_dir : File.expand_path("#{settings.public_dir}/#{settings.cache_dir}") # <--- new line
+      cache_dir = cache_dir[0..-2] if cache_dir[-1,1] == '/'
+      "#{cache_dir}/#{cache_file_name(path,opts)}"
+    end
+
+
+## change #2
+
+    :::ruby
+    def self.registered(app)
+      app.helpers(Cache::Helpers)
+      app.set :cache_enabled, true
+      app.set :cache_page_extension, '.html'
+      app.set :public_dir, 'public'         # <--- new line #1
+      app.set :cache_dir, 'public/cache'    # <--- new line #2
+      app.set :cache_logging, true
+      app.set :cache_logging_level, :debug
+    end

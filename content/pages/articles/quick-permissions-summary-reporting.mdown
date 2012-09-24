@@ -1,5 +1,5 @@
 Date: 10 Jul 2012
-Categories: projects/bash
+Categories: categories/bash
 Summary: Sometimes a small list of permissions for all files in a directory is really helpful. Here are some commands to help out with printing the octal permissions mode for all files and counting the results.
 
 # Quick Permissions Reporting
@@ -10,14 +10,12 @@ While in a directory and you are changing permissions, its really helpful to get
 
 The first command I came up with lists sorts the permissions then gets a count of each type which is useful for looking at the list in order of permissive. The lower number is a lower permission mode (at the top of the list) and the items going down progressively get more permissive.
 
-<pre lang="bash" class="highlight">
-  find . -type f -exec stat -c "%a" {} \; | sort | uniq -c
-</pre>
+    :::shell
+      %> find . -type f -exec stat -c "%a" {} \; | sort | uniq -c
 
 ## Summary of permissions sorted by count
 
 This is command is pretty much the same as above but with some extra sorting to find the popular type of permissions (sorted by the uniqueness count):
 
-<pre lang="bash" class="highlight">
-  find . -type f -exec stat -c "%a" {} \; | sort | uniq -c
-</pre>
+    :::shell
+      %> find . -type f -exec stat -c "%a" {} \; | sort | uniq -c

@@ -1,5 +1,5 @@
 Date: 26 July, 2012
-Categories: projects/puppet
+Categories: categories/puppet
 Summary: What was that command again to test the module? A template to copy for adding a user goes like what again? Ugh, I need a cheatsheet to help me keep all of this recorded! So here you go, the cheatsheet
 
 # Puppet Cheatsheet
@@ -8,20 +8,18 @@ I really like puppet and there seems like lots to learn. This article is the hom
 
 ## Apply a single manifest
 
-<pre lang="ruby" class="highlight">
-  puppet apply my_test_manifest.pp
-</pre>
+    :::shell
+      %> puppet apply my_test_manifest.pp
 
 ## File resource
 
-<pre lang="ruby" class="highlight">
-file {'testfile':
-      path    => '/tmp/testfile',
-      ensure  => present,
-      mode    => 0640,
-      content => "I'm a test file.",
-    }
-</pre>
+    :::ruby
+    file {'testfile':
+          path    => '/tmp/testfile',
+          ensure  => present,
+          mode    => 0640,
+          content => "I'm a test file.",
+        }
 
 ## User resource
 

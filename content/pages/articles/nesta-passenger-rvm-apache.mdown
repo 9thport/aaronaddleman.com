@@ -1,5 +1,6 @@
 Date: 10 May, 2012
-Categories: projects/bash
+Categories: categories/bash, categories/sysadmin
+Summary: The steps that I took for setting up the Nestacms with passenger, RVM, and Apache on a hosting server.
 
 # Nestacms with passenger, rvm, apache
 
@@ -45,24 +46,22 @@ So! you want to build it. Ok, here are the steps I did:
  1. SetEnv LD_LIBRARY_PATH /home/aaron/.rvm/rubies/ruby-1.9.2-p320/lib
  1. SetEnv GEM_PATH /home/aaron/.rvm/gems/ruby-1.9.2-p320:/home/aaron/.rvm/gems/ruby-1.9.2-p320@global
 
-<pre> 
-<code class="apache">
-<VirtualHost *:80>
-   ServerName centos
-   # !!! Be sure to point DocumentRoot to 'public'!
-   DocumentRoot /apps/mysite/public
-   <Directory /apps/mysite/public>
-      # This relaxes Apache security settings.
-      AllowOverride all
-      # MultiViews must be turned off.
-      Options -MultiViews
-   </Directory>
-</VirtualHost>
-</code>
-</pre>
+Next, put the following into your Apache configuration:
 
-<pre lang="apache" class="highlight">
-LoadModule passenger_module /home/aaron/.rvm/gems/ruby-1.9.2-p320/gems/passenger-3.0.12/ext/apache2/mod_passenger.so
-PassengerRoot /home/aaron/.rvm/gems/ruby-1.9.2-p320/gems/passenger-3.0.12
-PassengerRuby /home/aaron/.rvm/rubies/ruby-1.9.2-p320/bin/ruby
-</pre>
+    :::apache-config
+    LoadModule passenger_module /home/aaron/.rvm/gems/ruby-1.9.2-p320/gems/passenger-3.0.12/ext/apache2/mod_passenger.so
+    PassengerRoot /home/aaron/.rvm/gems/ruby-1.9.2-p320/gems/passenger-3.0.12
+    PassengerRuby /home/aaron/.rvm/rubies/ruby-1.9.2-p320/bin/ruby
+  
+    <VirtualHost *:80>
+      ServerName centos
+      # !!! Be sure to point DocumentRoot to "public"
+      DocumentRoot /apps/mysite/public
+    
+      <Directory /apps/mysite/public>
+        # This relaxes Apache security settings.
+        AllowOverride all
+        # MultiViews must be turned off.
+        Options -Multiviews
+      </Directory>
+    </VirturalHost>

@@ -1,5 +1,5 @@
 Date: 09 July, 2012
-Categories: projects/ruby
+Categories: categories/ruby
 Summary: I have always defaulted to hpricot for parsing HTML, but today decided to try out Nokogiri. Its really cool! Some of the features are easy to understand and write. I added some examples to help remember how to use them on this article.
 
 # Nokogiri

@@ -1,0 +1,27 @@
+Date: 21 September, 2012
+Categories: categories/bash, categories/sysadmin
+Summary: How to setup codehighligher with ultraviolet syntax parsing
+
+%h1 Setting up rack-codehighligher with Nestacms
+
+%h2 Overview
+
+= @page.summary
+
+%h2 Why
+
+Using the NestaCMS is awesome. Its really meant for a person who likes to do programming as the framework/template is very bare bones. I am still getting used to how it works and how to extend its features. One of the things I like about blogging is to display some code or configuration snippets with syntax coloring. I tried out pygments but was quickly removed after trying to parse xml code snippets.
+
+%h2 How
+
+I put together a small shell script that summarized my commands
+
+= print_code(:syntax => 'shell', :filename => 'files/rack-codehighlighter.sh', :theme => 'eiffel')
+
+Create a new file called /public/css/eiffel.css with the following content:
+
+= print_code(:syntax => 'css', :filename => 'css/eiffel.css', :theme => 'eiffel')
+
+%h2 Extra stuff
+
+After 

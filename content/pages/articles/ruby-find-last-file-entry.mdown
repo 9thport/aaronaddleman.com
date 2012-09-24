@@ -1,12 +1,14 @@
 Date: 28 Aug, 2012
-Categories: projects/ruby
+Categories: categories/ruby
 Summary: Finding the latest file that ends with a number from a list of archives with Ruby came in helpful when writing some code. Read more to find out what it looks like.
 
 # Find latest file ending with a number with Ruby
 
-<pre lang="ruby" class="highlight">
-Dir.entries(shared_path + '/database_dumps').drop(2).sort_by{|s| s.scan(/\d+/).map{|s| s.to_i}}.last
-</pre>
+    :::ruby
+    Dir.entries(shared_path + '/database_dumps').drop(2).sort_by |s|
+      s.scan(/\d+/).map{|s| s.to_i}.last
+    end
+
 
 # Broken down in english
 

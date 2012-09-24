@@ -2,12 +2,16 @@ source 'http://rubygems.org'
 
 gem 'nesta', '0.9.13'
 gem "will_paginate"
-# gem "coderay"
-# gem "rack-codehighlighter", :require => "rack/codehighlighter"
+gem "coderay"
+gem "rack-codehighlighter", :require => "rack/codehighlighter"
+gem "ultraviolet", :require => "uv"
 gem 'rubypython'
-gem 'rack-pygments'
+# gem 'rack-pygments'
 gem 'maruku'
 gem 'nokogiri'
+gem 'redcarpet'
+gem 'textpow'
+gem 'sassy-math'
 
 
 

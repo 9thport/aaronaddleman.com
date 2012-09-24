@@ -1,5 +1,5 @@
 Date: 02 July 2012
-Categories: projects/openldap
+Categories: categories/openldap
 Flags: draft
 Summary: How to integrate OpenLDAP with ppolicy and management with Apache Directory Studio
 <!-- Read more: Read more -->

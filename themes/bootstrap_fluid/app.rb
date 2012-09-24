@@ -13,7 +13,7 @@ Tilt.prefer Tilt::MarukuTemplate
 
 module Nesta
   class App
-    use Rack::Pygmoku, { :lexer_attr => 'lang' } if Rack.const_defined?(:Pygmoku)
+    use Rack::Pygmoku, { :lexer_attr => 'class' } if Rack.const_defined?(:Pygmoku)
     
     # Uncomment the Rack::Static line below if your theme has assets
     # (i.e images or JavaScript).

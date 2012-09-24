@@ -1,4 +1,4 @@
-- if page.date
+- if ! page.categories.empty?
   %footer
     %p.meta
       Published
@@ -13,4 +13,3 @@
               %a(href="#{url(category.abspath)}")= category.heading
           - else
             %a(href="#{url(category.abspath)}")= category.heading
-
