@@ -29,14 +29,22 @@ module Nesta
       filename = opt[:filename]
       theme = opt[:theme] || "eiffel"
       syntax = opt[:syntax]
+      show_code = opt[:show_code]
       
       text = File.read(Dir.pwd + '/public/' + filename)
       processor = Textpow::RecordingProcessor.new
       result = Uv.parse( text, "xhtml", "shell", false, "eiffel")
       
-      download_link = "<span id=\"download\"><a href=\"/files/#{filename}\">Download the #{filename}</a></span><br><br>"
-      result = result + download_link
-      return result
+      download_link = "<span id=\"download\"><a href=\"/files/#{filename}\">Download the #{filename.split("/").last}</a></span>"
+      
+      case show_code
+      when true
+        return result + download_link
+      when false
+        return download_link
+      end
+      # result = result + download_link
+      # return result
     end
     
     helpers do
