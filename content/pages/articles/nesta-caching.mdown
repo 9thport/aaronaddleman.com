@@ -4,11 +4,13 @@ Summary: Getting around an error message and turning on caching in Nesta 0.9.3
 
 # How to enable caching in Nestacms 0.9.3
 
-I wanted to turn on caching but got a bad error message. So after investigating around in the Nesta gem of files I made the following changes in the cache.rb file:
+## Summary
+
+I wanted to turn on caching but got a bad error message (along the lines of "calling to a private method 'public' is not allowed") so I decided to try a test of renaming the method to one that is allowed. So after investigating around in the Nesta gem of files I made the following changes in the cache.rb file:
 
 ## change #1
 
-old block
+### old block
 
     :::ruby
     def cache_page_path(path,opts={})
@@ -20,7 +22,7 @@ old block
       "#{cache_dir}/#{cache_file_name(path,opts)}"
     end
 
-new block
+### new block
 
     :::ruby
     def cache_page_path(path,opts={})
@@ -34,6 +36,8 @@ new block
 
 
 ## change #2
+
+At the bottom of the cache.rb file, add the two new lines:
 
     :::ruby
     def self.registered(app)
