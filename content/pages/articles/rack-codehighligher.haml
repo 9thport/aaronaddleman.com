@@ -16,11 +16,19 @@ Using the NestaCMS is awesome. Its really meant for a person who likes to do pro
 
 I put together a small shell script that summarized my commands
 
-= print_code(:syntax => 'shell', :filename => 'files/nesta-codehighlighter/rack-codehighlighter.sh', :theme => 'eiffel')
+%br
+%br
+= print_code(:syntax => 'shell', :filename => 'files/nesta-codehighlighter/rack-codehighlighter.sh', :theme => 'eiffel', :show_code => true)
+%br
+%br
 
 Create a new file called /public/css/eiffel.css with the following content:
 
-= print_code(:syntax => 'css', :filename => 'css/eiffel.css', :theme => 'eiffel')
+%br
+%br
+= print_code(:syntax => 'css', :filename => 'css/uv_themes/eiffel.css', :theme => 'eiffel', :show_code => false)
+%br
+%br
 
 %h2 Authoring content
 
@@ -35,4 +43,4 @@ After enabling the changes above, you can create code by putting the following t
     
 or you can use ruby to read the file in and parse the file into the content. Here is what I did to display my files into my content:
 
-= print_code(:syntax => 'ruby', :filename => 'files/nesta-codehighlighter/nesta-app.rb', :theme => 'eiffel')
+= print_code(:syntax => 'ruby', :filename => 'files/nesta-codehighlighter/nesta-app.rb', :theme => 'eiffel', :show_code => true)

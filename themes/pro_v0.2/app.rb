@@ -33,9 +33,9 @@ module Nesta
       
       text = File.read(Dir.pwd + '/public/' + filename)
       processor = Textpow::RecordingProcessor.new
-      result = Uv.parse( text, "xhtml", "shell", false, "eiffel")
+      result = Uv.parse( text, "xhtml", syntax, false, "eiffel")
       
-      download_link = "<span id=\"download\"><a href=\"/files/#{filename}\">Download the #{filename.split("/").last}</a></span>"
+      download_link = "<span id=\"download\"><a href=\"/#{filename}\">Download the #{filename.split("/").last}</a></span>"
       
       case show_code
       when true
