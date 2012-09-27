@@ -1,0 +1,5 @@
+- if toc_headers && toc_headers.any?
+  %ol
+    - toc_headers.each do |id, header|
+      %li
+        %a(href="##{id}")= header

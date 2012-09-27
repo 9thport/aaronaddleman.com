@@ -1,0 +1,11 @@
+- unless pages.empty?
+  - pages.each do |page|
+    %div(class="four columns")
+      %img(src="http://placehold.it/400x300&text=img")
+      %h4
+        %a(href="#{url(page.abspath)}")= page.heading
+      %p
+        - if page.summary.nil? || page.summary.empty?
+          ~ page.body(self)
+        - else
+          ~ page.summary
