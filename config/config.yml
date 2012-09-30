@@ -37,7 +37,7 @@ theme: pro_v0.2
 #     but not in the least bit helpful if your pages are dynamic, or you're
 #     deploying Nesta to Heroku.
 #
-cache: false
+cache: true
 
 # content
 #     The root directory where nesta will look for your article files.
@@ -65,6 +65,6 @@ google_analytics_code: "UA-31631239-1"
 # Don't forget to uncomment the "production:" line too...
 
 production:
-#   cache: true    
+#   cache: true
 #   content: /var/apps/nesta/shared/content
   google_analytics_code: "UA-31631239-1"

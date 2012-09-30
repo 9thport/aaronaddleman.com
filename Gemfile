@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
-gem 'nesta', '0.9.13'
+# gem 'nesta', '0.9.13'
+gem "nesta", :git => "git://github.com/gma/nesta.git"
 gem "will_paginate"
 gem "coderay"
 gem "rack-codehighlighter", :require => "rack/codehighlighter"

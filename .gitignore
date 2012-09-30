@@ -3,3 +3,6 @@
 .bundle
 .DS_Store
 .sass-cache
+Gemfile.lock
+aaronaddleman.sublime-project
+aaronaddleman.sublime-workspace

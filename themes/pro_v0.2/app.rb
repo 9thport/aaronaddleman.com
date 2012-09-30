@@ -24,36 +24,40 @@ module Nesta
     use Rack::Static, :urls => ["/pro_v0.2"], :root => "themes/pro_v0.2/public"
 
     helpers WillPaginate::Sinatra::Helpers
+
     
+
     def print_code(opt={})
       filename = opt[:filename]
-      theme = opt[:theme] || "eiffel"
+      theme = opt[:theme] || "brilliance_black"
       syntax = opt[:syntax]
-      show_code = opt[:show_code]
-      
+      show_code = opt[:show_code] || true
+
       text = File.read(Dir.pwd + '/public/' + filename)
       processor = Textpow::RecordingProcessor.new
       result = Uv.parse( text, "xhtml", syntax, false, "eiffel")
-      
-      download_link = "<span id=\"download\"><a href=\"/#{filename}\">Download the #{filename.split("/").last}</a></span>"
-      
-      case show_code
-      when true
-        return result + download_link
-      when false
-        return download_link
-      end
+
+      # download_link = "<span id=\"download\"><a href=\"/#{filename}\">Download the #{filename.split("/").last}</a></span>"
+
+      haml(:print_code, :layout => false, :locals => { :code => result, :filename => filename })
+
+      # case show_code
+      # when true
+      #   return result + download_link
+      # when false
+        # return download_link
+      # end
       # result = result + download_link
       # return result
     end
-    
+
     helpers do
       # Add new helpers here.
       def can_generate_toc?
         [:Maruku, :Nokogiri].all? { |cls| Object.const_defined?(cls) }
       end
 
-      # Provide page TOC    
+      # Provide page TOC
       def toc(page, toc_template = :table_of_contents)
         return nil unless can_generate_toc?
         headings = Nokogiri::HTML(page.body(self)).css('h2 h3')

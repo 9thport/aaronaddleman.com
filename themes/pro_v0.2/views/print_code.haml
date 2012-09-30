@@ -1,0 +1,8 @@
+/ download_link.haml
+
+= code
+
+%span#download
+	Download the file:
+	%a(href="/#{filename}")
+		= filename.split("/").last
