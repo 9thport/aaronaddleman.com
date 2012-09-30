@@ -1,8 +1,8 @@
 Date: 23 September, 2012
 Categories: categories/nesta
-Summary: Getting around an error message and turning on caching in Nesta 0.9.3
+Summary: Getting around an error message and turning on caching in Nesta 0.9.13
 
-# How to enable caching in Nestacms 0.9.3
+# How to enable caching in Nestacms 0.9.13
 
 ## Summary
 
