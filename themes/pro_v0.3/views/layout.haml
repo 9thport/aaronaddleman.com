@@ -1,110 +1,147 @@
-
-:plain
-  <!DOCTYPE html>
-
-  <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-  <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-  <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-  <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-  <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-  <head>
-    <meta charset="utf-8" />
-
-    <!-- Set the viewport width to device width for mobile -->
-    <meta name="viewport" content="width=device-width" />
-
-    <title>Welcome to Foundation | Homepage</title>
-  
-    <!-- Included CSS Files (Uncompressed) -->
-    <!--
+!!!
+/ paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
+/[if IE 7] <html class="no-js lt-ie9 lt-ie8" lang="en">
+/[if IE 8] <html class="no-js lt-ie9" lang="en">
+/ [if gt IE 8]><!
+%html.no-js{:lang => "en"}
+  / <![endif]
+  %head
+  %meta{:charset => "utf-8"}/
+  %meta{:charset => "utf-8"}
+  - if @description
+    %meta(name="description" content=@description)
+  - if @keywords
+    %meta(name="keywords" content=@keywords)
+  / Set the viewport width to device width for mobile
+  %meta{:content => "width=device-width", :name => "viewport"}/
+  %title= @title
+  / Included CSS Files (Uncompressed)
+  /
     <link rel="stylesheet" href="stylesheets/foundation.css">
-    -->
-  
-    <!-- Included CSS Files (Compressed) -->
-    <link rel="stylesheet" href="/css/foundation/foundation.min.css">
-    <link rel="stylesheet" href="/css/foundation/app.css">
-
-    <script src="javascripts/modernizr.foundation.js"></script>
-
-    <!-- IE Fix for HTML5 Tags -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-  </head>
-  <body>
-  
-    <!-- Header and Nav -->
-
-    #{haml :sidebar, :layout => false}
-  
-    <!-- End Header and Nav -->
-  
-  
-  
-    <!-- Three-up Content Blocks -->
-  
-    <div class="row">
-      #{article_summaries(latest_articles(count = 3 ) ) }
-          
-    </div>
-  
-  
-    <!-- Call to Action Panel -->
-    <div class="row">
-      <div class="twelve columns">
+  / Included CSS Files (Compressed)
+  %link{:href => "/css/foundation/foundation.min.css", :rel => "stylesheet"}
+    %link{:href => "/css/foundation/app.css", :rel => "stylesheet"}
+      %script{:src => "javascripts/modernizr.foundation.js"}
+      / IE Fix for HTML5 Tags
+      /[if lt IE 9]
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  %link(href="#{url('/articles.xml')}" rel="alternate" type="application/atom+xml")
+  %body
+  / Header and Nav
+  %nav.top-bar
+    %ul
+      / Title Area
+      %li.name
+        %h1
+          %a{:href => "/"}
+            = @heading
+      %li.toggle-topbar
+        %a{:href => "#"}
+    %section
+      / Left Nav Section
+      - display_menu(@menu_items, :class => "left")
+  / End Header and Nav
+  / Main Grid Section
+  .row
+    .three.columns
+      .panel
+        %h5 Panel Title
+        %p This is a three columns grid panel with an arbitrary height.
+    .six.columns
+      .panel
+        %h5 Panel Title
+        %p This is a six columns grid panel with an arbitrary height. Bacon ipsum dolor sit amet salami ham hock biltong ball tip drumstick sirloin pancetta meatball short loin.
+    .three.columns
+      .panel
+        %h5 Panel Title
+        %p This is a three columns grid panel with an arbitrary height.
+  .row
+    .six.columns
+      .panel
+        %h5 Panel Title
+        %p This is a six columns grid panel with an arbitrary height. Bacon ipsum dolor sit amet salami ham hock biltong ball tip drumstick sirloin pancetta meatball short loin.
+    .two.columns
+      .panel
+        %p
+          %img{:src => "http://placehold.it/200x200"}/
+    .four.columns
+      .panel
+        %h5 Panel Title
+        %p This is a four columns grid panel with an arbitrary height. Bacon ipsum dolor sit amet salami.
+  .row
+    .four.columns
+      .panel
+        %p
+          %img{:src => "http://placehold.it/400x300"}/
+    .four.columns
+      .panel
+        %p
+          %img{:src => "http://placehold.it/400x300"}/
+    .four.columns
+      .panel
+        %p
+          %img{:src => "http://placehold.it/400x300"}/
+  .row
+    .six.columns
+      .panel
+        %h5 Panel Title
+        %p This is a six columns grid panel with an arbitrary height. Bacon ipsum dolor sit amet salami ham hock biltong ball tip drumstick sirloin pancetta meatball short loin.
+    .three.columns
+      .panel
+        %h5 Panel Title
+        %p This is a three columns grid panel with an arbitrary height.
+    .three.columns
+      .panel
+        %h5 Panel Title
+        %p This is a three columns grid panel with an arbitrary height.
+  / End Grid Section
+  / Footer
+  %footer.row
+    .twelve.columns
+      %hr/
+      .row
+        .six.columns
+          %p &copy; Copyright no one at all. Go to town.
+        .six.columns
+          %ul.link-list.right
+            %li
+              %a{:href => "#"} Section 1
+            %li
+              %a{:href => "#"} Section 2
+            %li
+              %a{:href => "#"} Section 3
+            %li
+              %a{:href => "#"} Section 4
+  / Included JS Files (Uncompressed)
+  /
+    <script src="javascripts/jquery.js"></script>
     
-        <div class="panel">
-          <h4>Get in touch!</h4>
-            
-          <div class="row">
-            <div class="nine columns">
-              <p>We'd love to hear from you, you attractive person you.</p>
-            </div>
-            <div class="three columns">
-              <a href="#" class="radius button right">Contact Us</a>
-            </div>
-          </div>
-        </div>
-      
-      </div>
-    </div>
-  
-  
-    <!-- Footer -->
-  
-    <footer class="row">
-      <div class="twelve columns">
-        <hr />
-        <div class="row">
-          <div class="six columns">
-            <p>&copy; Copyright no one at all. Go to town.</p>
-          </div>
-          <div class="six columns">
-            <ul class="link-list right">
-              <li><a href="#">Link 1</a></li>
-              <li><a href="#">Link 2</a></li>
-              <li><a href="#">Link 3</a></li>
-              <li><a href="#">Link 4</a></li>
-            </ul>
-          </div>
-        </div>
-      </div> 
-    </footer>
-  
-  
-    <!-- Included JS Files (Compressed) -->
-    <script src="/js/foundation/jquery.js"></script>
-    <script src="/js/foundation/foundation.min.js"></script>
-  
-    <!-- Initialize JS Plugins -->
-    <script src="/js/foundation/app.js"></script>
-
-    <script type="text/javascript">
-       $(window).load(function() {
-           $('#slider').orbit();
-       });
-    </script>
-  
-  </body>
-  </html>
+    <script src="javascripts/jquery.foundation.mediaQueryToggle.js"></script>
+    
+    <script src="javascripts/jquery.foundation.forms.js"></script>
+    
+    <script src="javascripts/jquery.foundation.reveal.js"></script>
+    
+    <script src="javascripts/jquery.foundation.orbit.js"></script>
+    
+    <script src="javascripts/jquery.foundation.navigation.js"></script>
+    
+    <script src="javascripts/jquery.foundation.buttons.js"></script>
+    
+    <script src="javascripts/jquery.foundation.tabs.js"></script>
+    
+    <script src="javascripts/jquery.foundation.tooltips.js"></script>
+    
+    <script src="javascripts/jquery.foundation.accordion.js"></script>
+    
+    <script src="javascripts/jquery.placeholder.js"></script>
+    
+    <script src="javascripts/jquery.foundation.alerts.js"></script>
+    
+    <script src="javascripts/jquery.foundation.topbar.js"></script>
+  / Included JS Files (Compressed)
+  %script{:src => "javascripts/jquery.js"}
+  %script{:src => "javascripts/foundation.min.js"}
+  / Initialize JS Plugins
+  %script{:src => "javascripts/app.js"}

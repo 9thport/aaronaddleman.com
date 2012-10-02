@@ -1,11 +1,11 @@
-- if ! page.categories.empty?
+- unless page.categories.empty?
   %footer
     %p.meta
       Published
       - if page.date
         on
         %time(datetime="#{page.date.to_s}" pubdate=true)= format_date(page.date)
-      - if (! page.categories.empty?)
+      - unless page.categories.empty?
         in
         - page.categories.each do |category|
           - if category != page.categories[-1]
