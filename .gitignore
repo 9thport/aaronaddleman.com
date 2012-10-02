@@ -3,3 +3,7 @@
 .bundle
 .DS_Store
 .sass-cache
+aaronaddleman.sublime-project
+aaronaddleman.sublime-workspace
+public/css/master.css
+public/index.html
