@@ -41,6 +41,14 @@ pre.eiffel .MarkupTag {
 pre.eiffel {
    background-color: #FFFFFF;
    color: #000000;
+   overflow-x: auto;
+   white-space: pre-wrap;
+   white-space: -moz-pre-wrap !important;
+   white-space: -pre-wrap;
+   white-space: -o-pre-wrap;
+/*    width: 99%; */
+   word-wrap: break-word;
+   
 }
 pre.eiffel .MarkupHeading {
    font-weight: bold;
