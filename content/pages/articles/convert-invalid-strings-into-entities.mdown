@@ -1,0 +1,38 @@
+Date: 13 October, 2012
+Categories: categories/ruby, categories/wordpress
+Summary: When scraping content, sometimes a invalid character is contained in the content. In this article, I show some code that I used to convert the invalids into entities using the htmlentities gem package.
+
+# Overview
+
+While scraping content from a website, I ran into a large problem with content containing invalid characters. These were characters like the "medium-dash", apostrophe from a Microsoft Word document, and other strange characters (excluding math operations). With my script grabbing the content and putting it into Wordpress, they were all converted into three characters that looked really bad.
+
+# Solution
+
+## Attempt 1 (outcome = not good)
+
+I tried to use gsub to replace the characters, but this started to get long and out of control and at some point, it stopped to work on the count of I could not target the invalid character.
+
+## Attempt 2 (outcome = not good)
+
+Forcing the ruby script to work in UTF-8 only did not help either.
+
+## Attempt 3 (outcome = better)
+
+Using ruby string#encode to convert the invalids did work, but it converted some items and others were just deleted. Below is an example of how I used the code:
+
+    :::ruby
+    string.encode Encoding.find('ASCII'), {
+      :invalid           => :replace,  # Replace invalid byte sequences
+      :undef             => :replace,  # Replace anything not defined in ASCII
+      :replace           => '',        # Use a blank for those replacements
+      :universal_newline => true       # Always break lines with \n
+    }
+
+## Attempt 4 (outcome = very good)
+
+I came across the library called "htmlentities" and with a little testing I found a great combination of what I wanted to do with the scrapped content. First, the code takes the inner text and encodes the invalid characters. Then I use gsub to return some of the entities back into what I would like to use for Wordpress content to uphold the html classes, tags, and design.
+
+    :::ruby
+    HTMLEntities::new::encode(results.inner_html, :basic, :named, :decimal).gsub("&lt;", "<").gsub("&gt;", ">").gsub("&#10;", "").gsub("&quot;", "\"")
+    
+I might try to use the results.inner_text but this works great for this project.
