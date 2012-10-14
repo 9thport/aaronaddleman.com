@@ -29,7 +29,8 @@ pre.eiffel .LibraryVariable {
    color: #21439C;
 }
 pre.eiffel .line-numbers {
-   background-color: #C3DCFF;
+/*   background-color: #C3DCFF;*/
+   background-color: #FFFFFF;
    color: #000000;
 }
 pre.eiffel .FunctionParameter {
@@ -38,8 +39,15 @@ pre.eiffel .FunctionParameter {
 pre.eiffel .MarkupTag {
    color: #1C02FF;
 }
+
 pre.eiffel {
-   background-color: #FFFFFF;
+  border: 1px solid #EAEAEA;
+  border-radius: 3px;
+  background-color: #F8F8F8;
+  
+/*   background-color: #FFFFFF;*/
+/*   border: solid 1px #ccc;*/
+/*   background-color: #efefef;*/
    color: #000000;
    overflow-x: auto;
    white-space: pre-wrap;
@@ -47,9 +55,13 @@ pre.eiffel {
    white-space: -pre-wrap;
    white-space: -o-pre-wrap;
 /*    width: 99%; */
-   word-wrap: break-word;
-   
+   word-wrap: break-word;   
 }
+
+span.line-numbers {
+  background-color: #FFFFFF;
+}
+
 pre.eiffel .MarkupHeading {
    font-weight: bold;
    color: #0C07FF;
@@ -125,5 +137,6 @@ pre.eiffel .Variable {
    font-style: italic;
 }
 pre.eiffel .Comment {
-   color: #00B418;
+/*   color: #00B418;*/
+   color: grey;
 }

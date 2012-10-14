@@ -10,13 +10,17 @@ While scraping content from a website, I ran into a large problem with content c
 
 # Solution
 
-## Attempt 1 (outcome = okay, but too many variations good)
+## Attempt 1 (outcome = okay, but too many variations)
 
 I tried to use gsub to replace the characters, but this started to get long and out of control and at some point, it stopped to work on the count of I could not target the invalid character.
 
 ## Attempt 2 (outcome = not good)
 
-Forcing the ruby script to work in UTF-8 only did not help either.
+Forcing the ruby script to work in UTF-8 only did not help either. This seemed to have no effect by adding the following to the top of my script files:
+
+    :::ruby
+    #!/usr/bin/env ruby -w
+    # encoding: UTF-8
 
 ## Attempt 3 (outcome = better)
 
@@ -32,7 +36,7 @@ Using ruby string#encode to convert the invalids did work, but it converted some
 
 ## Attempt 4 (outcome = very good)
 
-I came across the library called "htmlentities" and with a little testing I found a great combination of what I wanted to do with the scrapped content. First, the code takes the inner text and encodes the invalid characters. Then I use gsub to return some of the entities back into what I would like to use for Wordpress content to uphold the html classes, tags, and design.
+I came across the library called [htmlentities][1] and with a little testing I found a great combination of what I wanted to do with the scrapped content. First, the code takes the inner text and encodes the invalid characters. Then I use gsub to return some of the entities back into what I would like to use for Wordpress content to uphold the html classes, tags, and design.
 
     :::ruby
     require 'htmlentities'
@@ -40,3 +44,5 @@ I came across the library called "htmlentities" and with a little testing I foun
     HTMLEntities::new::encode(results.inner_html, :basic, :named, :decimal).gsub("&lt;", "<").gsub("&gt;", ">").gsub("&#10;", "").gsub("&quot;", "\"")
     
 I might try to use the results.inner_text but this works great for this project.
+
+[1]: http://htmlentities.rubyforge.org/ "Html Entities"
