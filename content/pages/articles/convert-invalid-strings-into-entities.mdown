@@ -36,7 +36,7 @@ Using ruby string#encode to convert the invalids did work, but it converted some
 
 ## Attempt 4 (outcome = very good)
 
-I came across the library called [htmlentities][1] and with a little testing I found a great combination of what I wanted to do with the scrapped content. First, the code takes the inner text and encodes the invalid characters. Then I use gsub to return some of the entities back into what I would like to use for Wordpress content to uphold the html classes, tags, and design.
+I came across the library called [htmlentities][1] and with a little testing I found a great combination of what I wanted to do with the scrapped content. First, the code takes the inner html and encodes the invalid characters. Then I use gsub to return some of the entities back into what I would like to use for Wordpress content to uphold the html classes, tags, and design.
 
     :::ruby
     require 'htmlentities'
