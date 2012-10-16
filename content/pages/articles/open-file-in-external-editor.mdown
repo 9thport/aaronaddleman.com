@@ -1,5 +1,5 @@
 Date: 15 October, 2012
-Categories: categories/osx, categories/bash
+Categories: categories/os-x, categories/bash
 Summary: If you are a mac user and like macvim, opening up files from the terminal into macvim is what this article is about
 
 # Open files from the terminal into an external editor
