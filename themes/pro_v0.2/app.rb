@@ -13,6 +13,8 @@ require 'nokogiri'
 # code coloring
 # require "rack/pygments"
 
+require 'date'
+
 module Nesta
   class App
     Tilt.prefer Tilt::RedcarpetTemplate
@@ -41,12 +43,13 @@ module Nesta
 
       haml(:print_code, :layout => false, :locals => { :code => result, :filename => filename })
 
-      # case show_code
-      # when true
-      #   return result + download_link
-      # when false
-        # return download_link
-      # end
+      case show_code
+      when true
+        return haml(:print_code, :layout => false, :locals => { :code => result, :filename => filename })
+      when false
+        return download_link
+      end
+      
       # result = result + download_link
       # return result
     end

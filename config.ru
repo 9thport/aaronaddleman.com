@@ -3,6 +3,7 @@ ENV['LD_LIBRARY_PATH'] = '/usr/local/rvm/rubies/ruby-1.9.2-p320/lib'
 
 require 'rubygems'
 require 'bundler/setup'
+require 'date'
 
 Bundler.require(:default)
 

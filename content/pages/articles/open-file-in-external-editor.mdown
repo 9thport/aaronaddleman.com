@@ -1,0 +1,14 @@
+Date: 15 October, 2012
+Categories: categories/osx, categories/bash
+Summary: If you are a mac user and like macvim, opening up files from the terminal into macvim is what this article is about
+
+# Open files from the terminal into an external editor
+
+When using Mac OSX there are times when opening a file from the terminal into your favorite editor is necessary. This is accomplished by using the .profile file located in your home directory.
+
+## Open files into MacVim
+
+Add the following to your .profile and use "vim filename" top open the file into the external editor
+
+    :::bash
+    alias vim='/Applications/MacVim.app/Contents/MacOS/Vim -g -f '
